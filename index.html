@@ -46,65 +46,100 @@
 <main>
   <div class="hero">
     <div class="logo"><span class="a">Bustle</span></div>
-    <p class="tag">rush hour bus jam</p>
-    <img class="bean" src="hero.webp" alt="A rider waiting for the yellow Bustle bus">
+    <p class="tag" data-t="tag">rush hour bus jam</p>
+    <img class="bean" src="hero.webp" alt="A rider waiting for the yellow Bustle bus" data-alt="alt">
   </div>
 
   <div class="card">
-    <h2>Be one of the first players!</h2>
-    <p>Bustle is a bus jam puzzle with a clock. Tap buses out of a jammed parking lot to pick up riders of their colour before they lose patience. Fill a whole bus at once for a combo!</p>
+    <h2 data-t="h1">Be one of the first players!</h2>
+    <p data-t="intro">Bustle is a bus jam puzzle with a clock. Tap buses out of a jammed parking lot to pick up riders of their colour before they lose patience. Fill a whole bus at once for a combo!</p>
     <ul class="perks">
-      <li>🚌 100 levels in 5 areas: Downtown, Airport, Stadium, Snow City and Night Shift</li>
-      <li>⭐ Every level solved by our puzzle solver: 3 stars means you found a great route</li>
-      <li>📅 A new Daily Rush every day, the same lot for everyone, plus 8 bus skins</li>
-      <li>✈️ Free, plays offline, light on battery</li>
+      <li data-t="p1">🚌 120 levels in 6 areas: Downtown, Airport, Stadium, Snow City, Night Shift and Harbour</li>
+      <li data-t="p2">⭐ Every level solved by our puzzle solver: 3 stars means you found a great route</li>
+      <li data-t="p3">📅 A new Daily Rush every day, the same lot for everyone, plus 8 bus skins</li>
+      <li data-t="p4">✈️ Free, plays offline, light on battery</li>
     </ul>
   </div>
 
   <div class="card">
-    <h2>Join the test in 2 steps</h2>
-    <p>Use the same Google account that is signed in to the Play Store on your Android phone.</p>
-    <div class="wait" id="inapp-note" hidden><b>Heads-up:</b> you're in an in-app browser that isn't signed in to Google, so the buttons below open <b>Chrome</b> (or the Play Store), where your Google account is.</div>
+    <h2 data-t="h2">Join the test in 2 steps</h2>
+    <p data-t="account">Use the same Google account that is signed in to the Play Store on your Android phone.</p>
+    <div class="wait" id="inapp-note" data-t="inapp" hidden><b>Heads-up:</b> you're in an in-app browser that isn't signed in to Google, so the buttons below open <b>Chrome</b> (or the Play Store), where your Google account is.</div>
 
     <div class="step">
       <span class="num">1</span>
       <div>
-        <b class="t">Join the testers group</b>
-        On the page that opens, tap <b>Join group</b>. The group never sends email.
-        <a class="btn blue" id="btn-join" href="https://groups.google.com/g/bustle-testers/about" target="_blank" rel="noopener">Join the group</a>
+        <b class="t" data-t="s1t">Join the testers group</b>
+        <span data-t="s1">On the page that opens, tap <b>Join group</b>. The group never sends email.</span>
+        <a class="btn blue" id="btn-join" href="https://groups.google.com/g/bustle-testers/about" target="_blank" rel="noopener" data-t="b1">Join the group</a>
       </div>
     </div>
 
     <div class="step">
       <span class="num">2</span>
       <div>
-        <b class="t">Become a tester and install</b>
-        Open the tester page, tap <b>Become a tester</b>, then install from Google Play.
-        <a class="btn gold" id="btn-optin" href="https://play.google.com/apps/testing/com.masoft.bustle" target="_blank" rel="noopener">Become a tester</a>
-        <a class="btn gold" id="btn-install" href="https://play.google.com/store/apps/details?id=com.masoft.bustle" target="_blank" rel="noopener">Install from Google Play</a>
-        <div class="note">More than one Google account on your phone? On the tester page, tap the round picture at the top right and pick the account your Play Store uses.</div>
+        <b class="t" data-t="s2t">Become a tester and install</b>
+        <span data-t="s2">Open the tester page, tap <b>Become a tester</b>, then install from Google Play.</span>
+        <a class="btn gold" id="btn-optin" href="https://play.google.com/apps/testing/com.masoft.bustle" target="_blank" rel="noopener" data-t="b2">Become a tester</a>
+        <a class="btn gold" id="btn-install" href="https://play.google.com/store/apps/details?id=com.masoft.bustle" target="_blank" rel="noopener" data-t="b3">Install from Google Play</a>
+        <div class="note" data-t="accounts">More than one Google account on your phone? On the tester page, tap the round picture at the top right and pick the account your Play Store uses.</div>
       </div>
     </div>
 
-    <div class="wait"><b>Please be patient:</b> after joining, Google Play can take from a few minutes up to a few hours to show you the app. If it says "Item not found", that's normal: try again a bit later.</div>
-    <p style="margin-top:12px"><b>Please keep it installed for at least 2 weeks</b> and play a few levels. Tell us what you loved and what was confusing: it really helps us launch!</p>
+    <div class="wait" data-t="patience"><b>Please be patient:</b> after joining, Google Play can take from a few minutes up to a few hours to show you the app. If it says "Item not found", that's normal: try again a bit later.</div>
+    <p style="margin-top:12px" data-t="keep"><b>Please keep it installed for at least 2 weeks</b> and play a few levels. Tell us what you loved and what was confusing: it really helps us launch!</p>
   </div>
-  <footer>MA Soft · Bustle · Android closed test</footer>
+  <footer data-t="footer">MA Soft · Bustle · Android closed test</footer>
 </main>
 <script>
 (function () {
   // Page events for Grafana, relayed by the mmw-site-events Cloudflare Worker (my-english-world/cloudflare-worker/site-events.js).
   var EVENTS_URL = "https://mmw-site-events.miav55555.workers.dev/";
   var SERVICE = "Bustle Site";
-  var PAGE_VERSION = "1";
+  var PAGE_VERSION = "2";
   var params = new URLSearchParams(location.search);
+  // Spanish for phones set to Spanish (or ?lang=es): most of the Taboola traffic from Mexico. Google's own pages
+  // (the group and the Play tester page) already show in the phone's language.
+  var ES = {
+    title: "Bustle - Únete a la prueba",
+    tag: "atasco de autobuses en hora pico",
+    alt: "Un pasajero esperando el autobús amarillo de Bustle",
+    h1: "¡Sé de los primeros en jugar!",
+    intro: "Bustle es un rompecabezas de autobuses contra el reloj. Saca los autobuses de un estacionamiento atascado para recoger a los pasajeros de su color antes de que pierdan la paciencia. ¡Llena un autobús entero de una vez para hacer un combo!",
+    p1: "🚌 120 niveles en 6 zonas: Centro, Aeropuerto, Estadio, Ciudad Nevada, Turno de Noche y Puerto",
+    p2: "⭐ Cada nivel está resuelto por nuestro solucionador: 3 estrellas significa que encontraste una gran ruta",
+    p3: "📅 Un Daily Rush nuevo cada día, el mismo estacionamiento para todos, y 8 diseños de autobús",
+    p4: "✈️ Gratis, funciona sin internet y gasta poca batería",
+    h2: "Únete a la prueba en 2 pasos",
+    account: "Usa la misma cuenta de Google con la que entras a Play Store en tu teléfono Android.",
+    inapp: "<b>Ojo:</b> estás en un navegador dentro de otra app que no tiene tu cuenta de Google, así que los botones de abajo abren <b>Chrome</b> (o Play Store), donde sí está tu cuenta.",
+    s1t: "Únete al grupo de testers",
+    s1: "En la página que se abre, toca <b>Unirse al grupo</b>. El grupo nunca envía correos.",
+    b1: "Unirme al grupo",
+    s2t: "Hazte tester e instala",
+    s2: "Abre la página de testers, toca el botón para <b>hacerte tester</b> y luego instala desde Google Play.",
+    b2: "Hacerme tester",
+    b3: "Instalar desde Google Play",
+    accounts: "¿Tienes más de una cuenta de Google en el teléfono? En la página de testers, toca la foto redonda de arriba a la derecha y elige la cuenta que usa tu Play Store.",
+    patience: "<b>Ten paciencia:</b> después de unirte, Google Play puede tardar desde unos minutos hasta unas horas en mostrarte la app. Si dice \"No se encontró el elemento\", es normal: vuelve a intentarlo un poco más tarde.",
+    keep: "<b>Por favor, mantenla instalada al menos 2 semanas</b> y juega algunos niveles. Cuéntanos qué te encantó y qué fue confuso: ¡nos ayuda muchísimo a lanzarla!",
+    footer: "MA Soft · Bustle · prueba cerrada en Android"
+  };
+  var langParam = params.get("lang");
+  var pageLang = langParam ? (langParam === "es" ? "es" : "en") : /^es\b/i.test(navigator.language || "") ? "es" : "en";
+  if (pageLang === "es") {
+    document.documentElement.lang = "es";
+    document.title = ES.title;
+    document.querySelectorAll("[data-t]").forEach(function (el) { var t = ES[el.getAttribute("data-t")]; if (t) el.innerHTML = t; });
+    document.querySelectorAll("[data-alt]").forEach(function (el) { el.alt = ES[el.getAttribute("data-alt")]; });
+  }
   var ua = navigator.userAgent || "";
   var ref = document.referrer || "";
   var source = params.get("utm_source") || (/taboola/i.test(ref) ? "taboola" : ref ? "referral" : "direct");
   var platform = /Android/i.test(ua) ? "android" : /iPhone|iPad|iPod/i.test(ua) ? "ios" : "desktop";
   var inApp = /FBAN|FBAV/i.test(ua) ? "facebook" : /Instagram/i.test(ua) ? "instagram" : /TikTok/i.test(ua) ? "tiktok" : /WhatsApp/i.test(ua) ? "whatsapp" : /Telegram/i.test(ua) ? "telegram" : /\bwv\b/.test(ua) ? "webview" : "none";
   var isBot = /bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|Googlebot|bingbot|Applebot|WhatsApp|TelegramBot/i.test(ua) ? "true" : "false";
-  var base = { source: source, medium: params.get("utm_medium") || "", campaign: params.get("utm_campaign") || "", referrer: ref.slice(0, 200), platform: platform, in_app_browser: inApp, is_bot: isBot, lang: (navigator.language || "").slice(0, 8) };
+  var base = { source: source, medium: params.get("utm_medium") || "", campaign: params.get("utm_campaign") || "", referrer: ref.slice(0, 200), platform: platform, in_app_browser: inApp, is_bot: isBot, lang: (navigator.language || "").slice(0, 8), page_lang: pageLang };
   function esc(v) { var s = String(v); return /[ ="]/.test(s) ? '"' + s.replace(/\\/g, "\\\\").replace(/"/g, '\\"') + '"' : (s || '""'); }
   function send(name) {
     var parts = ["event=" + esc(name), "app_version=" + esc(PAGE_VERSION)];
